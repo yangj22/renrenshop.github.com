@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>shopcmd-营销平台</title>
+    <link href="favicon.ico" rel="shortcut icon"/>
+    <link rel="stylesheet" href="css/yxpt.css">
+    <script src="js/jsonp.js"></script>
+    <script src="jquery.js"></script>
+  </head>
+  <body>
+    <header class="box">
+    	<div class="header clearfix">
+        	<a href="#"><div class="log fl"></div></a>
+            <nav class="nav fl">
+            	<ul id="head">
+                	<li><a href="index.html">关于人人店</a></li>
+                    <li class="nav_t"><a href="shop.html">商城系统</a></li>
+                    <li class="nav_b"><a href="yxpt.html" class="active">营销平台</a></li>
+                    <li class="nav_t"><a href="page4.html">人人分销</a></li>
+                    <li class="nav_t nav_e">
+                    	<a href="#">
+                    		用户中心
+                            <i class="i"></i>
+                        </a>
+                        <div class="column">
+                            <i></i>
+                            <ul class="column_b">
+                               <li><a href="#">官网商城管理</a></li>
+                               <li><a href="#">品牌综合商场</a></li>
+                               <li><a href="#">人人分销管理</a></li>
+                               <li><a href="#">第三方商城分销管理</a></li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+	<section class="banner">
+      <div class="banner_1">
+        <div>
+          <img src="images/yingxiao_rocket.png" alt="" class="img1">
+          <img src="images/yingxiao_theme.png" alt="" class="img2">
+          <img src="images/yingxiao_title.png" alt="" class="img3">
+          <p>shopCMD分销开放平台,是针对第三方商城的全平台网络分销解决方案
+            方案融PC和移动端于一体,帮助第三方商城,实现店铺及商品信息在全网络的快速分发</p>
+          <a href="#" class="banner_btn"></a>
+        </div>
+      </div>
+    </section>
+    <section class="main">
+      <div class="title">
+        <h2></h2>
+      </div>
+      <ul class="clearfix main_1">
+        <li class="first">
+          <a href="">
+            <div class="ico1"></div>
+            <h4>简单快速</h4>
+            <p>0门槛加入,快速上手无需学习,
+效果立竿见影</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="ico2"></div>
+            <h4>全渠道</h4>
+            <p>站点,自媒体,朋友圈,全渠道,多终端的分销军团,帮助你快速实现商品直触买家</p>
+          </a>
+        </li>
+        <li>
+          <a href="">
+            <div class="ico3"></div>
+            <h4>更高效</h4>
+            <p>更好的效果,更高的性价比,数据全面,投放自由,效果实时监控</p>
+          </a>
+        </li>
+      </ul>
+      <div class="flow">
+        <div class="title">
+          <h2></h2>
+        </div>
+      </div>
+      <div class="logos">
+        <div class="title">
+          <h2></h2>
+        </div>
+        <div class="webpear_1">
+          <div id="webpear">
+            <ul class="clearfix">
+              <!--<li>
+                <a href="">
+                  <img src="images/yingxiao_t1.png" alt="" width="324px" height="210px">
+                  <span></span>
+                  <i>海云品牌商城</i>
+                </a>
+              </li>-->
+            </ul>
+          </div>
+          <div class="controls">
+            <a href="javascript:;" class="controls_1"></a>
+            <a href="javascript:;" class="controls_2"></a>
+          </div>
+        </div>
+        <div class="ty_btn">
+          <a href="javascript:;" class="btn">
+            点击体验
+          </a>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer_1">
+        <ul class="clearfix">
+          <li class="first">
+            <a href="index.html">首页</a><i>|</i>
+          </li>
+          <li>
+            <a href="shop.html">商场系统</a><i>|</i>
+          </li>
+          <li>
+            <a href="yxpt.html" class="active">营销平台</a><i>|</i>
+          </li>
+          <li>
+            <a href="page4.html">人人分销</a><i>|</i>
+          </li>
+          <li>
+            <a href="javascript:;">新闻动态</a><i>|</i>
+          </li>
+          <li>
+            <a href="javascript:;">联系我们</a><i>|</i>
+          </li>
+          <li class="end">
+            <i class="last">400-188-360</i>
+          </li>
+        </ul>
+        <p class="footer_2">Copyright 2015 苏州海云网络科技有限公司版权所有 | 苏ICP备15038170号-3</p>
+      </div>
+    </footer>
+    <section class="service">
+    	<div class="service_fixed" id="side">
+        	<a href="#" target="_blank"></a>
+            <a href="#" target="_blank"></a>
+        </div>
+    </section>
+  </body>
+  <script>
+    var oW=document.querySelector('#webpear');
+    var oUl=oW.querySelector('ul');
+      jsonp({
+        url:'http://boss.shopcmd.com/boss/website/websiteCase.do',
+        data:{
+          site:2
+        },
+        cbName:'callback',
+        success:function(json){
+          //console.log(json.data.content)
+          var arr=json.data.content
+          for(var i=0 ; i<arr.length; i++){
+            var aLi=document.createElement('li');
+            aLi.dataset.a='ol'
+            aLi.innerHTML ='<a href="'+arr[i].webAddress+'">'+
+              '<img src="http://hycloudshop.img-cn-hangzhou.aliyuncs.com/'+arr[i].logo+'" alt="" width="324px" height="210px">'+
+              '<span></span>'+
+              '<i>'+arr[i].webName+'</i>'+
+            '</a>';
+            oUl.appendChild(aLi)
+
+          }
+          var aLi=oUl.querySelectorAll('li')
+          //console.log(aLi)
+          oUl.style.width=aLi[0].offsetWidth*aLi.length+40*aLi.length+'px'
+
+                var oL=document.querySelector('.controls_1');
+                var oR=document.querySelector('.controls_2');
+                var iNow=0
+                  oR.onclick=function(){
+                    //console.log(iNow)
+                    //console.log(-(aLi[0].offsetWidth+40))
+                    iNow++
+                    if(iNow==1){
+                      iNow=1
+                      console.log(iNow)
+                      oUl.style.transition='1s';
+                      oUl.style.left=-(aLi[0].offsetWidth+40)*iNow+'px';
+                      oL.style.backgroundPosition="0 -60px";
+                      oR.style.backgroundPosition="0 -180px";
+                    }
+                  }
+                  oL.onclick=function(){
+                    iNow=0
+                    oUl.style.transition='1s';
+                    oUl.style.left=0;
+                    oL.style.backgroundPosition="0 0px";
+                    oR.style.backgroundPosition="0 -120px";
+                  }
+        }
+      })
+  /*  oL.onclick=function(){
+      oUl.style.transition='1s';
+      oUl.style.left=0;
+      oL.style.backgroundPosition="0 0px";
+      oR.style.backgroundPosition="0 -120px";
+    }*/
+	/*侧边提示信息*/
+	var oDiv=document.getElementById('side');
+	oDiv.children[0].onmouseenter=function(){
+		oDiv.children[0].innerHTML='联系我们';
+		oDiv.children[0].style.background='#3e92f9';
+	}
+	oDiv.children[0].onmouseleave=function(){
+		oDiv.children[0].innerHTML='';
+		oDiv.children[0].style.backgroundColor='';
+		oDiv.children[0].style.backgroundImage='url(img/1.png)';
+	}
+	oDiv.children[1].onmouseenter=function(){
+		oDiv.children[1].style.backgroundImage='url(img/4.png)';
+	}
+	oDiv.children[1].onmouseleave=function(){
+		oDiv.children[1].style.backgroundImage='url(img/2.png)';
+	}
+</script>
+</html>
